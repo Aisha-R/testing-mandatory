@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="SudokuTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-04-03T10:18:39" hostname="DESKTOP-05G6SV1" time="0.045">
+  <properties/>
+  <testcase name="shouldNotBePossible()" classname="SudokuTest" time="0.03"/>
+  <testcase name="shouldCheckIfNumberIsNotInSubgrid()" classname="SudokuTest" time="0.001"/>
+  <testcase name="shouldCheckIfNumberIsInColumn()" classname="SudokuTest" time="0.002"/>
+  <testcase name="shouldBePossible()" classname="SudokuTest" time="0.001"/>
+  <testcase name="shouldCheckIfNumberIsInSubgrid()" classname="SudokuTest" time="0.001"/>
+  <testcase name="shouldCheckIfNumberIsInRow()" classname="SudokuTest" time="0.001"/>
+  <testcase name="shouldCheckIfNumberIsNotInColumn()" classname="SudokuTest" time="0.001"/>
+  <testcase name="shouldCheckIfNumberIsNotInRow()" classname="SudokuTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
