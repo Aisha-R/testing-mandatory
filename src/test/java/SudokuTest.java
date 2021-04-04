@@ -26,7 +26,6 @@ class SudokuTest {
 
     @Test
     void shouldCheckIfNumberIsInRow() {
-
         //given
         int number = 6;
         int row = 0;
@@ -40,7 +39,6 @@ class SudokuTest {
 
     @Test
     void shouldCheckIfNumberIsNotInRow() {
-
         //given
         int number = 9;
         int row = 5;
@@ -54,7 +52,6 @@ class SudokuTest {
 
     @Test
     void shouldCheckIfNumberIsInColumn() {
-
         //given
         int number = 3;
         int column = 7;
@@ -68,7 +65,6 @@ class SudokuTest {
 
     @Test
     void shouldCheckIfNumberIsNotInColumn() {
-
         //given
         int number = 1;
         int column = 2;
@@ -82,7 +78,6 @@ class SudokuTest {
 
     @Test
     void shouldCheckIfNumberIsInSubgrid() {
-
         //given
         int number = 5;
         int row = 8;
@@ -97,7 +92,6 @@ class SudokuTest {
 
     @Test
     void shouldCheckIfNumberIsNotInSubgrid() {
-
         //given
         int number = 9;
         int row = 5;
@@ -112,7 +106,6 @@ class SudokuTest {
 
     @Test
     void shouldBePossible() {
-
         //given
         int number = 8;
         int row = 0;
@@ -127,7 +120,6 @@ class SudokuTest {
 
     @Test
     void shouldNotBePossible() {
-
         //given
         int number = 9;
         int row = 6;
@@ -142,9 +134,6 @@ class SudokuTest {
 
     @Test
     void shouldSolveProblem() {
-        //given
-        underTest = new Sudoku(problem);
-
         //when
         boolean result = underTest.solve();
 
@@ -154,19 +143,12 @@ class SudokuTest {
 
     @Test
     void shouldDisplayBoard() {
-        //expected
-        underTest = new Sudoku(problem);
-
-        //actual
+        //when
         String result = underTest.toString();
 
         //then
         assertEquals(String.valueOf(underTest), result);
 
     }
-
-
-
-
 
 }

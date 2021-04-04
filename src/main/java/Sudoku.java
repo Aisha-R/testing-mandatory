@@ -1,6 +1,6 @@
 public class Sudoku {
 
-   public static int[][] GRID_TO_SOLVE = {
+   public static int[][] PROBLEM = {
             { 0, 0, 0, 2, 6, 0, 7, 0, 1 },
             { 6, 8, 0, 0, 7, 0, 0, 9, 0 },
             { 1, 9, 0, 0, 0, 4, 5, 0, 0 },
@@ -15,13 +15,7 @@ public class Sudoku {
     private int[][] board;
 
     public Sudoku(int[][] board) {
-        this.board = new int[9][9];
-
-        for (int row = 0; row < 9; row++) {
-            for (int column = 0; column < 9; column++) {
-                this.board[row][column] = board[row][column];
-            }
-        }
+        this.board = board;
     }
 
     public boolean isNumberInRow(int number, int row) {
@@ -58,11 +52,7 @@ public class Sudoku {
     }
 
     public boolean isPossibleNumber(int number, int row, int column) {
-        if (!isNumberInRow(number, row) && !isNumberInColumn(number, column) && !isNumberInSubgrid(number, row, column)) {
-            return true;
-        } else {
-            return false;
-        }
+        return !isNumberInRow(number, row) && !isNumberInColumn(number, column) && !isNumberInSubgrid(number, row, column);
     }
 
     public boolean solve() {
@@ -91,34 +81,23 @@ public class Sudoku {
     public String toString() {
         StringBuilder str = new StringBuilder();
         for (int row = 0; row < 9; row++){
-            for (int column = 0; column < 9; column++)
+            for (int column = 0; column < 9; column++) {
                 str.append(board[row][column]).append(" ");
+            }
             str.append("\n");
         }
+
         System.out.println(str.toString());
         return str.toString();
     }
 
-    /*
-    public void display() {
-        for (int row = 0; row < 9; row++) {
-            for (int column = 0; column < 9; column++) {
-                System.out.print(" " + board[row][column]);
-
-            }
-            System.out.println();
-        }
-         System.out.println();
-    }*/
-
-
     public static void main(String[] args) {
-        Sudoku sudoku = new Sudoku(GRID_TO_SOLVE);
-        System.out.println("Sudoku grid to solve");
+        Sudoku sudoku = new Sudoku(PROBLEM);
+        System.out.println("Sudoku Problem:");
         sudoku.toString();
 
         if (sudoku.solve()) {
-            System.out.println("Sudoku Grid solved...");
+            System.out.println("Sudoku Solution:");
             sudoku.toString();
         } else {
             System.out.println("Unsolvable");
