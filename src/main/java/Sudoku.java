@@ -1,5 +1,5 @@
 public class Sudoku {
-  /*
+
    public static int[][] GRID_TO_SOLVE = {
             { 0, 0, 0, 2, 6, 0, 7, 0, 1 },
             { 6, 8, 0, 0, 7, 0, 0, 9, 0 },
@@ -10,7 +10,7 @@ public class Sudoku {
             { 0, 0, 9, 3, 0, 0, 0, 7, 4 },
             { 0, 4, 0, 0, 5, 0, 0, 3, 6 },
             { 7, 0, 3, 0, 1, 8, 0, 0, 0 },
-    };*/
+    };
 
     private int[][] board;
 
@@ -88,30 +88,41 @@ public class Sudoku {
         return true; // sudoku solved
     }
 
+    public String toString() {
+        StringBuilder str = new StringBuilder();
+        for (int row = 0; row < 9; row++){
+            for (int column = 0; column < 9; column++)
+                str.append(board[row][column]).append(" ");
+            str.append("\n");
+        }
+        System.out.println(str.toString());
+        return str.toString();
+    }
+
+    /*
     public void display() {
-        int row = 0;
-        int column = 0;
-        for ( row = 0; row < 9; row++) {
-            for ( column = 0; column < 9; column++) {
+        for (int row = 0; row < 9; row++) {
+            for (int column = 0; column < 9; column++) {
                 System.out.print(" " + board[row][column]);
+
             }
             System.out.println();
         }
          System.out.println();
-    }
+    }*/
 
-    /*
+
     public static void main(String[] args) {
         Sudoku sudoku = new Sudoku(GRID_TO_SOLVE);
         System.out.println("Sudoku grid to solve");
-        sudoku.display();
+        sudoku.toString();
 
         if (sudoku.solve()) {
             System.out.println("Sudoku Grid solved...");
-            sudoku.display();
+            sudoku.toString();
         } else {
             System.out.println("Unsolvable");
         }
-    }*/
+    }
 
 }

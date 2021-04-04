@@ -1,21 +1,15 @@
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream
+import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.*;
 
 class SudokuTest {
 
     private Sudoku underTest;
     private int[][] problem;
-    private final PrintStream standardOut = System.out;
-    private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 
     @BeforeEach
     void setUp() {
-        System.setOut(new PrintStream(outputStreamCaptor));
-
         problem = new int[][] {
                 { 0, 0, 0, 2, 6, 0, 7, 0, 1 },
                 { 6, 8, 0, 0, 7, 0, 0, 9, 0 },
@@ -28,11 +22,6 @@ class SudokuTest {
                 { 7, 0, 3, 0, 1, 8, 0, 0, 0 },
         };
         underTest = new Sudoku(problem);
-    }
-
-    @AfterEach
-    public void tearDown() {
-        System.setOut(standardOut);
     }
 
     @Test
@@ -165,6 +154,14 @@ class SudokuTest {
 
     @Test
     void shouldDisplayBoard() {
+        //expected
+        underTest = new Sudoku(problem);
+
+        //actual
+        String result = underTest.toString();
+
+        //then
+        assertEquals(String.valueOf(underTest), result);
 
     }
 
