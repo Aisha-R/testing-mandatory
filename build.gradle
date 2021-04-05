@@ -1,10 +1,14 @@
 plugins {
-    id 'java'
+    id "application"
 }
+apply plugin : "java"
 
 group 'org.example'
 version '1.0-SNAPSHOT'
 
+ext {
+    javaMainClass = "Sudoku"
+}
 repositories {
     mavenCentral()
 }
@@ -14,6 +18,10 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
     testImplementation 'org.mockito:mockito-inline:3.7.7'
     testImplementation 'org.mockito:mockito-junit-jupiter:3.7.7'
+}
+
+application {
+    mainClassName = javaMainClass
 }
 
 test {
